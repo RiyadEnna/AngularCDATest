@@ -1,0 +1,59 @@
+<h2>Détails de la Commande</h2>
+
+
+<div *ngIf="orderClientCurrent">
+    <div class="order-details-container">
+      <div class="order-detail">
+        <div class="order-label">ID de la Commande :</div>
+        <div class="order-value">{{ orderClientCurrent.orderID }}</div>
+      </div>
+  
+    <div class="order-detail">
+      <span class="order-label">ID de la Commande:</span>
+      <span class="order-value">{{ orderClientCurrent.orderID }}</span>
+    </div>
+    <div class="order-detail">
+      <span class="order-label">État de la Commande:</span>
+      <span class="order-value">{{ orderClientCurrent.orderState }}</span>
+    </div>
+    <div class="order-detail">
+      <span class="order-label">Date de Création:</span>
+      <span class="order-value">{{ orderClientCurrent.creationDateTime | date:'dd/MM/yyyy HH:mm:ss' }}</span>
+    </div>
+    <div class="order-detail">
+      <span class="order-label">Dernière Modification:</span>
+      <span class="order-value">{{ orderClientCurrent.lastModifiedDateTime | date:'dd/MM/yyyy HH:mm:ss' }}</span>
+    </div>
+    <div class="order-detail">
+      <span class="order-label">ID du Client:</span>
+      <span class="order-value">{{ orderClientCurrent.clientID }}</span>
+    </div>
+
+    <div class="order-detail">
+        <div class="order-label">État :</div>
+        <div class="order-value" [ngClass]="{
+          'order-state-draft': orderClientCurrent.orderState === 'draft',
+          'order-state-confirmed': orderClientCurrent.orderState === 'confirmed',
+          'order-state-in-progress': orderClientCurrent.orderState === 'inProgress',
+          'order-state-completed': orderClientCurrent.orderState === 'completed',
+          'order-state-cancelled': orderClientCurrent.orderState === 'cancelled'
+        }">{{ orderClientCurrent.orderState }}</div>
+      </div>
+    
+
+    
+    <div class="order-detail">
+      <span class="order-label">Détails de la Commande:</span>
+      <ul>
+        <li *ngFor="let detail of orderClientCurrent.orderDetails">
+          {{ detail.quantity }} X {{ detail.unitPrice }} =  {{ detail.quantity * detail.unitPrice }} euro (Product ID: {{ detail.productID }})
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!orderClientCurrent">
+  <p>Commande non trouvée.</p>
+</div>
+

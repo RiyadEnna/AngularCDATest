@@ -1,0 +1,35 @@
+<h2>Ajouter une adresse</h2>
+
+<form (ngSubmit)="addUserAddress()" #addressForm="ngForm" class="address-form">
+  <div class="form-group">
+    <label for="streetLine1">Adresse</label>
+    <input type="text" id="streetLine1" name="streetLine1" [(ngModel)]="addressToAdd.streetLine1" required>
+  </div>
+
+  <div class="form-group">
+    <label for="zipCode">Code postal</label>
+    <input type="text" id="zipCode" name="zipCode" [(ngModel)]="addressToAdd.zipCode" required>
+  </div>
+
+  <div class="form-group">
+    <label for="city">Ville</label>
+    <input type="text" id="city" name="city" [(ngModel)]="addressToAdd.city" required>
+  </div>
+
+  <div class="form-group">
+    <label for="phone">Téléphone</label>
+    <input type="text" id="phone" name="phone" [(ngModel)]="addressToAdd.phone" required>
+  </div>
+
+  <div class="form-group">
+    <label for="countryID">Pays</label>
+    <select id="countryID" name="countryID" [(ngModel)]="addressToAdd.countryID" required>
+      <option value="" disabled>Sélectionnez un pays</option>
+      <option *ngFor="let country of countries" [value]="country.countryID">{{ country.name }}</option>
+    </select>
+  </div>
+
+
+
+  <button type="submit" [disabled]="!addressForm.valid" class="submit-button">Ajouter l'adresse</button>
+</form>

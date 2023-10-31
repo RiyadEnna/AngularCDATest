@@ -1,0 +1,28 @@
+.client-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    margin: 20px 0;
+  }
+  
+  .client-table th, .client-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .address-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .address-table th, .address-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .address-table th {
+    background-color: #f2f2f2;
+  }
+  

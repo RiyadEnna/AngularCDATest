@@ -1,0 +1,13 @@
+<h2>Détails du Produit</h2>
+<div class="details-container">
+  <h2>{{ productCurrent?.name }}</h2>
+  <p>Type de produit : {{ productCurrent?.productType }}</p>
+  <p>Prix unitaire : {{ productCurrent?.unitPrice }} euro</p>
+  <p *ngIf="productCurrent?.description">Description : {{ productCurrent?.description }}</p>
+  <p>En stock : {{ productCurrent?.stockpiled }}</p>
+
+
+
+<div *ngIf="!productCurrent" class="product-not-found">
+  Produit non trouvé.
+</div>

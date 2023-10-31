@@ -1,0 +1,40 @@
+<h2>Liste des Commandes de Produits</h2>
+
+<div>
+  <button (click)="filterOrdersByState('draft')" class="custom-button button-draft">Draft</button>
+  <button (click)="filterOrdersByState('confirmed')" class="custom-button button-confirmed">Confirmed</button>
+  <button (click)="filterOrdersByState('inProgress')" class="custom-button button-in-progress">In Progress</button>
+  <button (click)="filterOrdersByState('completed')" class="custom-button button-completed">Completed</button>
+  <button (click)="filterOrdersByState('cancelled')" class="custom-button button-cancelled">Cancelled</button>
+  <button (click)="getAll()" class="custom-button">All</button>
+</div>
+
+
+<div *ngIf="orderList && orderList.length > 0">
+  <table class="order-table">
+    <thead>
+      <tr>
+        <th>État</th>
+        <th>ID de la Commande</th>
+        <th>Date de Création</th>
+        <th>Dernière Modification</th>
+        <th>ID du Client</th>
+        <th>Order Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of (filteredOrderList || orderList)" class="order-card" (click)="selectOrder(order)">
+        <td [ngClass]="{'order-state-draft': order.orderState === 'draft', 'order-state-confirmed': order.orderState === 'confirmed', 'order-state-in-progress': order.orderState === 'inProgress', 'order-state-completed': order.orderState === 'completed', 'order-state-cancelled': order.orderState === 'cancelled'}"></td>
+        <td>{{ order.orderID }}</td>
+        <td>{{ order.creationDateTime | date:'dd/MM/yyyy HH:mm:ss' }}</td>
+        <td>{{ order.lastModifiedDateTime | date:'dd/MM/yyyy HH:mm:ss' }}</td>
+        <td>{{ order.clientID }}</td>
+        <td>{{ order.orderDetails ? order.orderDetails : 'Aucun détail fourni' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="!orderList || orderList.length === 0">
+  <p>Aucune commande de produits disponible.</p>
+</div>

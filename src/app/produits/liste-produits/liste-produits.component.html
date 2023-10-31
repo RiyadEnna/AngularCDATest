@@ -1,0 +1,16 @@
+<h2>Liste des produits</h2>
+
+
+
+<div class="product-list">
+  <div [ngClass]="getProductCardClass(product)" *ngFor="let product of productsList" (click)="selectProduct(product)">
+    <h3>{{ product.name }}</h3>
+    <p>Prix unitaire: {{ product.unitPrice }} euro</p>
+  </div>
+</div>
+
+
+<div *ngIf="!productsList || productsList.length === 0">
+  <p>Aucun produit disponible.</p>
+</div> 
+

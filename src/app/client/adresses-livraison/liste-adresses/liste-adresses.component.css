@@ -1,0 +1,37 @@
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .address-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .address-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Détails de l'adresse */
+  .address-details {
+    font-size: 16px;
+  }
+  
+  /* Éléments forts (étiquettes) */
+  .address-details strong {
+    font-weight: bold;
+    margin-right: 5px;
+  }
+  
+  /* Message pour aucune adresse disponible */
+  p {
+    font-size: 18px;
+    text-align: center;
+    color: #999;
+  }
+  

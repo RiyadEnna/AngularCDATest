@@ -1,0 +1,5 @@
+<div class="quantity-selector">
+  <button (click)="decrementQuantity()" [disabled]="selectedQuantity === 1">-</button>
+  <span>{{ selectedQuantity }}</span>
+  <button (click)="incrementQuantity()" [disabled]="selectedQuantity === availableQuantity">+</button>
+</div>

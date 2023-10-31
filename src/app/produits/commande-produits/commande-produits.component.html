@@ -1,0 +1,26 @@
+<h2>Liste des Produits pour Commande</h2>
+
+<div *ngIf="confirmationMessage" class="confirmation-message">
+  {{ confirmationMessage }}
+</div>
+
+<div class="product-list">
+  <div *ngFor="let product of productsOrderList" [ngClass]="getProductCardClass(product)">
+    <h3>{{ product.name }}</h3>
+    <p>Prix unitaire: {{ product.unitPrice }} euro</p>
+    <p><strong>Type de produit :</strong> {{ product.productType }}</p>
+    <p><strong>Prix unitaire :</strong> {{ product.unitPrice }} euro</p>
+    <p><strong>Quantité en stock :</strong> {{ product.stockpiled }}</p>
+    
+    <app-quantity-selector
+    [availableQuantity]="product.stockpiled"
+    (quantityUpdated)="updateQuantity(product, $event)">
+  </app-quantity-selector>
+  
+  
+    
+    <p><strong>Quantité sélectionnée :</strong> {{ selectedQuantities.get(product.productID) || 0 }}</p>
+    
+    <button (click)="confirmOrder(product)">Confirmer la commande</button>
+  </div>
+</div>

@@ -1,0 +1,116 @@
+/* styles.css */
+.order-state-draft::before {
+  content: ' ';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: rgb(138, 19, 138); /* Couleur de la pastille pour l'état "Draft" */
+  border-radius: 50%; /* Pour obtenir une pastille ronde */
+  margin-right: 5px; /* Espacement entre la pastille et le texte */
+}
+
+.order-state-confirmed::before {
+  content: ' ';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: rgb(72, 163, 193); /* Couleur de la pastille pour l'état "Confirmed" */
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.order-state-in-progress::before {
+  content: ' ';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: darkblue; /* Couleur de la pastille pour l'état "In Progress" */
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.order-state-completed::before {
+  content: ' ';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: green; /* Couleur de la pastille pour l'état "Completed" */
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.order-state-cancelled::before {
+  content: ' ';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red; /* Couleur de la pastille pour l'état "Cancelled" */
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.order-table th, .order-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.order-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.order-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.order-table tr {
+  cursor: pointer;
+  transition: background-color 0.2s; 
+}
+
+.order-table tr:hover {
+  background-color: #f0f0f0; /* Changer la couleur de fond au survol */
+}
+
+.button-draft {
+  background-color: rgb(138, 19, 138); /* Couleur de fond pour l'état "Draft" */
+  color: #fff;
+}
+
+.button-confirmed {
+  background-color: rgb(72, 163, 193); /* Couleur de fond pour l'état "Confirmed" */
+  color: #fff;
+}
+
+.button-in-progress {
+  background-color: darkblue; /* Couleur de fond pour l'état "In Progress" */
+  color: #fff;
+}
+
+.button-completed {
+  background-color: green; /* Couleur de fond pour l'état "Completed" */
+  color: #fff;
+}
+
+.button-cancelled {
+  background-color: red; /* Couleur de fond pour l'état "Cancelled" */
+  color: #fff;
+}
+
+.custom-button {
+  padding: 10px 20px; 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.custom-button:hover {
+  background-color: #0056b3; 
+}

@@ -1,0 +1,50 @@
+.order-details-container {
+    border: 2px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .order-state-draft {
+    background-color: #ffcc00; /* Jaune pour l'état "Draft" */
+  }
+  
+  .order-state-confirmed {
+    background-color: #00cc66; /* Vert pour l'état "Confirmed" */
+  }
+  
+  .order-state-in-progress {
+    background-color: #3399ff; /* Bleu pour l'état "In Progress" */
+  }
+  
+  .order-state-completed {
+    background-color: #33cc33; /* Vert pour l'état "Completed" */
+  }
+  
+  .order-state-cancelled {
+    background-color: #ff3333; /* Rouge pour l'état "Cancelled" */
+  }
+  
+  .order-detail {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+  }
+  
+  .order-label {
+    font-weight: bold;
+  }
+  
+  .order-value {
+    flex-grow: 1;
+  }
+  
+  p {
+    font-size: 18px;
+    text-align: center;
+    color: #999;
+  }
+  

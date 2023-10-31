@@ -1,0 +1,22 @@
+<h2>Liste des Adresses</h2>
+
+<div *ngIf="adresseList && adresseList.length > 0">
+  <ul class="address-list">
+    <li *ngFor="let address of adresseList" class="address-item">
+      <div class="address-details">
+        <p><strong>Adresse ID:</strong> {{ address.addressID }}</p>
+        <p><strong>Rue 1:</strong> {{ address.streetLine1 }}</p>
+        <p><strong>Rue 2:</strong> {{ address.streetLine2 || 'N/A' }}</p>
+        <p><strong>Code Postal:</strong> {{ address.zipCode }}</p>
+        <p><strong>Ville:</strong> {{ address.city }}</p>
+        <p><strong>Téléphone:</strong> {{ address.phone }}</p>
+        <p><strong>Pays:</strong> {{ countryNames.get(address.countryID) || 'N/A' }}</p>
+        <p><strong>Client ID:</strong> {{ address.clientID }}</p>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="!adresseList || adresseList.length === 0">
+  <p>Aucune adresse disponible.</p>
+</div>

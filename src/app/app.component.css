@@ -1,0 +1,27 @@
+
+body {
+    background-color: #333; 
+    font-family: 'Arial', sans-serif; 
+    color: #fff; 
+  }
+  
+  h1 {
+    font-size: 36px; 
+    color: #9c27b0; 
+    text-align: center;
+  }
+  
+  nav {
+    background-color: #fff; 
+    color: #9c27b0; 
+  }
+  
+  a {
+    color: #9c27b0; 
+    text-decoration: none; 
+  }
+  
+  a:hover {
+    color: #6200ea; 
+  }
+  

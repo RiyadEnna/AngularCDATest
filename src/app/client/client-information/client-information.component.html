@@ -1,0 +1,41 @@
+<h2>Informations du Client</h2>
+
+<div *ngIf="clientData">
+  <table class="client-table">
+    <tr>
+      <th>Client ID</th>
+      <td>{{ clientData.clientID }}</td>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <td>{{ clientData.email }}</td>
+    </tr>
+    <tr>
+      <th>Adresses</th>
+      <td>
+        <table class="address-table">
+          <tr>
+            <th>Adresse ID</th>
+            <th>Adresse</th>
+            <th>Complément d'adresse</th>
+            <th>Code postal</th>
+            <th>Ville</th>
+            <th>Téléphone</th>
+          </tr>
+          <tr *ngFor="let address of clientData.addresses">
+            <td>{{ address.addressID }}</td>
+            <td>{{ address.streetLine1 }}</td>
+            <td>{{ address.streetLine2 || 'Aucun' }}</td>
+            <td>{{ address.zipCode }}</td>
+            <td>{{ address.city }}</td>
+            <td>{{ address.phone }}</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div *ngIf="!clientData">
+  <p>Informations du client non disponibles.</p>
+</div>
