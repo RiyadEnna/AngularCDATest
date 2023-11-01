@@ -51,9 +51,9 @@ export class CommandeProduitsComponent implements OnInit {
 
     console.log(message);
 
-    this.confirmationMessage = message;
-    setTimeout(() => {
-      this.confirmationMessage = ''; // Masquer le message
-    }, 4000); // Efface le message après 4 secondes
+      this.confirmationMessage = message;
+  setTimeout(() => {
+    this.confirmationMessage = ''; // Masquer le message
+  }, 4000); // Efface le message après 4 secondes
  }
 }

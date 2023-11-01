@@ -1,7 +1,7 @@
 import { OrderState } from './orderState.model'; 
 import { OrderDetail } from './orderDetail.model'; 
 
-export class Order {
+export interface Order {
   orderID: number;
   orderDetails: OrderDetail[];
   orderState: OrderState;
